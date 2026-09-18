@@ -18,45 +18,45 @@
 <div class="row">
     <div class="col-md-4">
         <div class="card border-primary mb-3">
-       <div class="card-header bg-primary text-white">
-  <strong>OnInitialized</strong>
-     <span class="badge bg-light text-primary float-end">@onInitializedCount calls</span>
-    </div>
+            <div class="card-header bg-primary text-white">
+                <strong>OnInitialized</strong>
+                <span class="badge bg-light text-primary float-end">@onInitializedCount calls</span>
+            </div>
             <div class="card-body">
-     <p class="card-text">
-          <small>Runs once when component is created</small><br />
-            <strong>Last called:</strong> @lastOnInitialized
-      </p>
-      </div>
+                <p class="card-text">
+                    <small>Runs once when component is created</small><br />
+                    <strong>Last called:</strong> @lastOnInitialized
+                </p>
+            </div>
+        </div>
     </div>
-    </div>
-    
+
     <div class="col-md-4">
         <div class="card border-info mb-3">
             <div class="card-header bg-info text-white">
-         <strong>OnParametersSet</strong>
-    <span class="badge bg-light text-info float-end">@onParametersSetCount calls</span>
+                <strong>OnParametersSet</strong>
+                <span class="badge bg-light text-info float-end">@onParametersSetCount calls</span>
             </div>
             <div class="card-body">
-       <p class="card-text">
-             <small>Runs on init and when parameters change</small><br />
-  <strong>Last called:</strong> @lastOnParametersSet
-    </p>
-     </div>
+                <p class="card-text">
+                    <small>Runs on init and when parameters change</small><br />
+                    <strong>Last called:</strong> @lastOnParametersSet
+                </p>
+            </div>
         </div>
     </div>
-    
+
     <div class="col-md-4">
         <div class="card border-success mb-3">
-      <div class="card-header bg-success text-white">
-       <strong>OnAfterRender</strong>
- <span class="badge bg-light text-success float-end">@onAfterRenderCount calls</span>
-         </div>
-<div class="card-body">
-        <p class="card-text">
-      <small>Runs after each render to DOM</small><br />
-          <strong>Last called:</strong> @lastOnAfterRender
-         </p>
+            <div class="card-header bg-success text-white">
+                <strong>OnAfterRender</strong>
+                <span class="badge bg-light text-success float-end">@onAfterRenderCount calls</span>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <small>Runs after each render to DOM</small><br />
+                    <strong>Last called:</strong> @lastOnAfterRender
+                </p>
             </div>
         </div>
     </div>
@@ -71,28 +71,28 @@
 {
     <div class="btn-group" role="group">
         <button class="btn btn-primary" @onclick="IncrementCount">
-       Instant Increment
- </button>
-   <button class="btn btn-warning" @onclick="IncrementCountDelayed" disabled="@isDelayedCounterRunning">
-          @if (isDelayedCounterRunning)
+            Instant Increment
+        </button>
+        <button class="btn btn-warning" @onclick="IncrementCountDelayed" disabled="@isDelayedCounterRunning">
+            @if (isDelayedCounterRunning)
             {
-        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-  <span>Counting in 3 seconds...</span>
-       }
-         else
-      {
- <span>Delayed Increment (3s)</span>
-   }
- </button>
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                <span>Counting in 3 seconds...</span>
+            }
+            else
+            {
+                <span>Delayed Increment (3s)</span>
+            }
+        </button>
     </div>
-    
+
     <div class="mt-3 alert alert-light">
         <p class="mb-1"><strong>What to observe:</strong></p>
-      <ul class="mb-0">
+        <ul class="mb-0">
             <li><strong>OnInitialized:</strong> Called once (count stays at 1)</li>
-        <li><strong>OnParametersSet:</strong> Called once on init (would increment if InitialCount changed from parent)</li>
-       <li><strong>OnAfterRender:</strong> Called after every UI update</li>
-      <li><strong>Delayed button:</strong> Requires <code>StateHasChanged()</code> after async work</li>
+            <li><strong>OnParametersSet:</strong> Called once on init (would increment if InitialCount changed from parent)</li>
+            <li><strong>OnAfterRender:</strong> Called after every UI update</li>
+            <li><strong>Delayed button:</strong> Requires <code>StateHasChanged()</code> after async work</li>
         </ul>
     </div>
 }
