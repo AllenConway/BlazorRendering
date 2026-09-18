@@ -1,0 +1,10 @@
+# Normalize line endings on checkin
+* text=auto
+
+# Exclude third-party client libraries from language statistics
+BlazorRenderingDemo/BlazorRenderingDemo/wwwroot/lib/** linguist-vendored
+
+# Report Razor components as C# rather than rolling up under the HTML group.
+# Linguist maps .razor to "HTML+Razor", which declares `group: HTML`.
+# Same approach used by ant-design-blazor.
+*.razor linguist-language=C#
