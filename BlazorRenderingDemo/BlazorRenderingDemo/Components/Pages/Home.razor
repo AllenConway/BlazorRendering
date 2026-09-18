@@ -1,0 +1,14 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<hr class="my-3" />
+
+<h3>Renderer: @RendererInfo.Name</h3>
+<p>Status: @(RendererInfo.IsInteractive ? "Interactive" : "Not yet interactive")</p>
+<p>Running on: @(OperatingSystem.IsBrowser() ? "Client (WASM)" : "Server")</p>
+<p><small class="text-muted">Render Mode: <code>Static SSR (no @@rendermode)</code> — plain server-rendered HTML, no interactivity.</small></p>
