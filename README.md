@@ -1,6 +1,6 @@
 # BlazorRendering
 
-A .NET 9 Blazor Web App demo that makes **render modes** and the **component lifecycle** visible and easy to reason about.
+A .NET 10 Blazor Web App demo that makes **render modes** and the **component lifecycle** visible and easy to reason about.
 
 The `Counter` page reports which renderer is active, whether the component is interactive yet, and whether the code is executing on the server or in the browser (WebAssembly) — while live-counting each lifecycle method invocation.
 
@@ -35,7 +35,7 @@ BlazorRendering.sln
 
 ## Requirements
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 - Visual Studio 2022/2026, VS Code, or Rider (optional)
 
 ## Getting started
