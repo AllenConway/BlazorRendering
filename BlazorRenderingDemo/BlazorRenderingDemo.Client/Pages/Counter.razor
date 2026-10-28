@@ -77,7 +77,7 @@
             @if (isDelayedCounterRunning)
             {
                 <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                <span>Counting in 3 seconds...</span>
+                <span>Continuing in @secondsRemaining seconds...</span>
             }
             else
             {
@@ -86,13 +86,22 @@
         </button>
     </div>
 
+    <div class="form-check mt-3">
+        <input class="form-check-input" type="checkbox" id="suppressRenders" @bind="suppressRenders" />
+        <label class="form-check-label" for="suppressRenders">
+            Suppress renders (<code>ShouldRender()</code> returns <code>false</code>)
+        </label>
+    </div>
+
     <div class="mt-3 alert alert-light">
         <p class="mb-1"><strong>What to observe:</strong></p>
         <ul class="mb-0">
             <li><strong>OnInitialized:</strong> Called once (count stays at 1)</li>
             <li><strong>OnParametersSet:</strong> Called once on init (would increment if InitialCount changed from parent)</li>
             <li><strong>OnAfterRender:</strong> Called after every UI update</li>
-            <li><strong>Delayed button:</strong> Requires <code>StateHasChanged()</code> after async work</li>
+            <li><strong>Delayed button:</strong> Blazor renders automatically for an awaited async handler</li>
+            <li><strong>Countdown ticks:</strong> Out of band, so they need <code>InvokeAsync(StateHasChanged)</code></li>
+            <li><strong>Suppress renders:</strong> State still changes, but the UI freezes until it is unchecked</li>
         </ul>
     </div>
 }
