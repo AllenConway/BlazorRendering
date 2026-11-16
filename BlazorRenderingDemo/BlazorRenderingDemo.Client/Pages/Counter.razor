@@ -6,6 +6,8 @@
 
 <h1>Counter</h1>
 
+@* Demo reset: use Incognito or DevTools > Application > Clear site data (removes localStorage 'blazor-resource-hash:*').
+   "Empty cache and hard reload" will NOT work: Auto still sees the hash and skips Server, going straight to WASM. *@
 <h3>Renderer: @RendererInfo.Name</h3>
 <p>Status: @(RendererInfo.IsInteractive ? "Interactive" : "Not yet interactive")</p>
 <p>Running on: @(OperatingSystem.IsBrowser() ? "Client (WASM)" : "Server")</p>
